@@ -12,3 +12,4 @@ wordcloud = WordCloud(font_path="simsun.ttf", background_color='white',
 plt.imshow(wordcloud, interpolation='bilinear') # 线性交叉
 plt.axis("off")
 plt.show()
+#  修改
