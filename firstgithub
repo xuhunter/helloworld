@@ -1,0 +1,14 @@
+import jieba
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+filename = "qiyemingcheng.txt"    # 要做词云的数据
+with open(filename, encoding='utf-8') as f:
+    mytext = f.read()
+mytext = " ".join(jieba.cut(mytext))
+exclude = {'有限公司','有限','企业','管理中心'}   # 删除不想显示的词语
+wordcloud = WordCloud(font_path="simsun.ttf", background_color='white',
+                      stopwords=exclude, collocations=False).generate(mytext) # collocations=False意思是词云中不要有重复的词语
+plt.imshow(wordcloud, interpolation='bilinear') # 线性交叉
+plt.axis("off")
+plt.show()
